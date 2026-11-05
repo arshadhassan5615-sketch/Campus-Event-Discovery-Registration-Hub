@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campus Event Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <p class="eyebrow">Campus Event Discovery &amp; Registration Hub</p>
+    <h1>What is on around campus</h1>
+    <p class="intro">Find workshops, competitions, talks and club events, then register for a seat.</p>
+  </header>
+
+  <main>
+
+    <!-- Dashboard: summary numbers, updated by script.js -->
+    <section class="panel" aria-labelledby="dashboard-heading">
+      <h2 id="dashboard-heading">Dashboard</h2>
+      <dl class="stats">
+        <div class="stat"><dt>Total events</dt><dd id="stat-total">0</dd></div>
+        <div class="stat"><dt>Upcoming events</dt><dd id="stat-upcoming">0</dd></div>
+        <div class="stat"><dt>Confirmed registrations</dt><dd id="stat-registrations">0</dd></div>
+        <div class="stat"><dt>Seats left (upcoming)</dt><dd id="stat-seats">0</dd></div>
+      </dl>
+    </section>
+
+    <!-- Form for adding and editing events -->
+    <section class="panel" aria-labelledby="form-heading">
+      <h2 id="form-heading">Add an event</h2>
+      <form id="event-form" novalidate>
+        <div class="field-grid">
+
+          <div class="field wide">
+            <label for="event-title">Event title</label>
+            <input id="event-title" name="title" type="text" maxlength="80">
+            <p class="error" id="error-title"></p>
+          </div>
+
+          <div class="field">
+            <label for="event-category">Category</label>
+            <select id="event-category" name="category">
+              <option value="">Choose a category</option>
+              <option>Workshop</option>
+              <option>Competition</option>
+              <option>Talk</option>
+              <option>Club event</option>
+            </select>
+            <p class="error" id="error-category"></p>
+          </div>
+
+          <div class="field">
+            <label for="event-venue">Venue</label>
+            <input id="event-venue" name="venue" type="text" maxlength="80">
+            <p class="error" id="error-venue"></p>
+          </div>
+
+          <div class="field">
+            <label for="event-date">Date</label>
+            <input id="event-date" name="date" type="date">
+            <p class="error" id="error-date"></p>
+          </div>
+
+          <div class="field">
+            <label for="event-time">Start time</label>
+            <input id="event-time" name="time" type="time">
+            <p class="error" id="error-time"></p>
+          </div>
+
+          <div class="field">
+            <label for="event-capacity">Seats (capacity)</label>
+            <input id="event-capacity" name="capacity" type="number" min="1" max="1000" step="1">
+            <p class="error" id="error-capacity"></p>
+          </div>
+
+          <div class="field wide">
+            <label for="event-description">Description</label>
+            <textarea id="event-description" name="description" maxlength="500"></textarea>
+            <p class="error" id="error-description"></p>
+          </div>
+
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn primary" id="save-button">Add event</button>
+          <button type="button" class="btn ghost" id="cancel-edit" hidden>Cancel edit</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Search and filters, then the event list -->
+    <section class="panel" aria-labelledby="list-heading">
+      <h2 id="list-heading">Find events</h2>
+      <div class="filters">
+        <label>Search
+          <input id="search" type="search" placeholder="Title, venue or description">
+        </label>
+        <label>Category
+          <select id="filter-category">
+            <option value="">All categories</option>
+            <option>Workshop</option>
+            <option>Competition</option>
+            <option>Talk</option>
+            <option>Club event</option>
+          </select>
+        </label>
+        <label>Status
+          <select id="filter-status">
+            <option value="">Any status</option>
+            <option>Open</option>
+            <option>Almost full</option>
+            <option>Full</option>
+            <option>Past</option>
+          </select>
+        </label>
+      </div>
+      <p id="result-count" class="muted" aria-live="polite"></p>
+      <div id="event-list" class="event-list"></div>
+    </section>
+
+  </main>
+
+  <!-- Short success and error messages -->
+  <div id="message" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+  <!-- About modal (hidden by default) -->
+  <div id="about-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="about-title" hidden>
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <header class="modal-header">
+        <h2 id="about-title">About Campus Event Hub</h2>
+        <button class="icon-btn" aria-label="Close modal" id="close-about">×</button>
+      </header>
+      <section class="modal-body">
+        <p><strong>What is this?</strong> A simple, responsive web app that lists campus events and lets students register for a seat.</p>
+        <p><strong>Who built it?</strong> CSE326 team — 3 members working together on Problem Statement–Based Project 1.</p>
+        <p><strong>Technologies used?</strong> Plain HTML5, CSS3, and vanilla JavaScript (no frameworks).</p>
+        <p><strong>Features?</strong> Search, filter by category/status, real-time capacity tracking, registration management, and responsive design for mobile/tablet/desktop.</p>
+        <p><strong>How to use?</strong> Open <code>index.html</code> in your browser. Add an event in the form, then register for a seat using your student ID.</p>
+      </section>
+      <footer class="modal-footer">
+        <button class="btn primary" id="save-about">Got it</button>
+      </footer>
+    </div>
+  </div>
