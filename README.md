@@ -45,5 +45,3 @@ This is a front-end demonstration, not a multi-user production service. There is
 - GitHub repository: https://github.com/arshadhassan5615-sketch/Campus-Event-Discovery-Registration-Hub
 - Deployed project: Add the verified public URL after deployment.
 - Team video presentation: Add the verified video URL after recording with all three members.
-
-For UMS, use the course-provided Excel template or Word format and verify all links before submission. Upload only the required project submission file unless instructed otherwise.
