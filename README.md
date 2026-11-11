@@ -43,5 +43,5 @@ This is a front-end demonstration, not a multi-user production service. There is
 ## Submission links
 
 - GitHub repository: https://github.com/arshadhassan5615-sketch/Campus-Event-Discovery-Registration-Hub
-- Deployed project: Add the verified public URL after deployment.
+- Deployed project: https://eventcampus.is-a.dev/
 - Team video presentation: Add the verified video URL after recording with all three members.

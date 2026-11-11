@@ -1,0 +1,7 @@
+# Course files (submitted on UMS, not part of the project)
+*.pdf
+*.docx
+*.xlsx
+
+# Local editor/preview settings
+.claude/
