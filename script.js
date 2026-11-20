@@ -221,16 +221,33 @@ function showErrors(errors) {
 
 // ---------- Drawing the page ----------
 
-// Updates the four numbers at the top
+// Updates the four numbers at the top and the seat-occupancy bar
 function renderDashboard() {
   const upcoming = events.filter(e => getStatus(e) !== 'Past');
   const totalConfirmed = events.reduce((sum, e) => sum + confirmedCount(e), 0);
   const totalSeats = upcoming.reduce((sum, e) => sum + seatsLeft(e), 0);
+  const totalCapacity = upcoming.reduce((sum, e) => sum + Number(e.capacity), 0);
 
   byId('stat-total').textContent = events.length;
   byId('stat-upcoming').textContent = upcoming.length;
   byId('stat-registrations').textContent = totalConfirmed;
   byId('stat-seats').textContent = totalSeats;
+
+  // Bar shows how much of all upcoming seat capacity is already booked
+  const bookedShare = totalCapacity > 0
+    ? Math.round((totalConfirmed / totalCapacity) * 100)
+    : 0;
+  byId('stat-bar').style.width = Math.min(100, bookedShare) + '%';
+
+  const caption = byId('stat-caption');
+  if (!upcoming.length) {
+    caption.textContent = 'No upcoming events yet.';
+  } else if (!totalConfirmed) {
+    caption.textContent = totalCapacity + ' seats open across ' + upcoming.length + ' upcoming events.';
+  } else {
+    caption.textContent = bookedShare + '% of ' + totalCapacity +
+      ' seats across upcoming events are already confirmed.';
+  }
 }
 
 // HTML for the list of people registered for one event

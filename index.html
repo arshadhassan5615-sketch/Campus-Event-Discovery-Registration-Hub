@@ -14,23 +14,32 @@
 <body>
 
   <!-- Header: navigation bar and hero -->
-  <header class="site-header">
+  <header class="site-header" id="page-top">
     <nav class="nav">
-      <a class="brand" href="#top"><span class="brand-mark">C</span><span>Campus<span class="brand-light">Hub</span></span></a>
-      <a class="nav-link" href="#events">Explore events</a>
+      <a class="brand" href="#page-top"><span class="brand-mark">C</span><span>Campus<span class="brand-light">Hub</span></span></a>
+      <div class="nav-links">
+        <a class="nav-link" href="#events">Explore events</a>
+        <a class="nav-link" href="#dashboard">Dashboard</a>
+        <a class="nav-link" href="#how-it-works">How it works</a>
+        <a class="nav-link" href="#problem">Problem &amp; team</a>
+      </div>
     </nav>
 
     <div class="hero" id="top">
+      <p class="hero-eyebrow">CSE 326 · CA1 Problem-Statement Project · Team Obsidian</p>
       <h1>Find campus events<br>and save your seat</h1>
-      <p class="hero-copy">Workshops, competitions, talks and club events from across campus. See what's coming up and register with your student ID.</p>
-      <a class="hero-button" href="#events">Explore upcoming events</a>
+      <p class="hero-copy">One place to see every workshop, competition, talk and club event on campus — then register for it in under a minute.</p>
+      <div class="hero-actions">
+        <a class="hero-button" href="#events">Explore upcoming events</a>
+        <a class="hero-button hero-button-ghost" href="#how-it-works">How it works</a>
+      </div>
     </div>
   </header>
 
   <main class="page-shell">
 
     <!-- Dashboard: quick numbers about all events -->
-    <section class="dashboard" aria-labelledby="dashboard-heading">
+    <section class="dashboard" id="dashboard" aria-labelledby="dashboard-heading">
       <div class="section-heading">
         <h2 id="dashboard-heading">Campus at a glance</h2>
         <span class="note">Saved in this browser</span>
@@ -53,6 +62,34 @@
           <dd id="stat-seats">0</dd>
         </div>
       </dl>
+      <div class="capacity-bar" aria-hidden="true"><span id="stat-bar"></span></div>
+      <p class="note" id="stat-caption">No seats booked yet.</p>
+    </section>
+
+    <!-- Three-step explainer: problem, solution, workflow -->
+    <section class="how" id="how-it-works" aria-labelledby="how-heading">
+      <div class="section-heading">
+        <h2 id="how-heading">How CampusHub solves the problem</h2>
+        <span class="note">CSE 326 · CA1 project</span>
+      </div>
+      <ol class="steps">
+        <li class="step">
+          <span class="step-num">01</span>
+          <h3>One list, not five</h3>
+          <p>Event notices on campus live in WhatsApp groups, notice boards and separate club pages. CampusHub collects them in a single searchable list with filters for category and status.</p>
+        </li>
+        <li class="step">
+          <span class="step-num">02</span>
+          <h3>Seats you can trust</h3>
+          <p>Every event has a fixed capacity. The card shows seats left and turns <em>Almost full</em> or <em>Full</em> automatically, so students stop chasing a closed room.</p>
+        </li>
+        <li class="step">
+          <span class="step-num">03</span>
+          <h3>Register in a minute</h3>
+          <p>Name, student ID and email. Duplicate IDs are blocked, capacity is respected, and cancellations are recorded instead of silently deleted.</p>
+        </li>
+      </ol>
+      <p class="note how-note">All data stays in your browser's local storage — no server, no account, no data leaving your device.</p>
     </section>
 
     <section class="content-grid" aria-label="Manage and discover events">
@@ -149,15 +186,96 @@
       </section>
 
     </section>
+
+    <!-- Problem statement, objectives and outcomes for the evaluator -->
+    <section class="brief" id="problem" aria-labelledby="problem-heading">
+      <div class="section-heading">
+        <h2 id="problem-heading">Problem statement &amp; objectives</h2>
+        <span class="note">CA1 · Problem-statement based project</span>
+      </div>
+
+      <div class="brief-grid">
+        <article class="brief-card">
+          <h3>The problem</h3>
+          <p>Campus events are announced across scattered channels — WhatsApp groups, notice boards, department emails and club pages. Students miss events they would have attended, and organizers have no reliable way to know how many people are coming. Registration is manual, duplicate entries are common, and nobody can say at a glance whether a room still has space.</p>
+        </article>
+
+        <article class="brief-card">
+          <h3>Our objectives</h3>
+          <ul class="check-list">
+            <li>One searchable catalogue of every campus event.</li>
+            <li>Live seat availability that cannot be overbooked.</li>
+            <li>Fast registration with duplicate-ID prevention.</li>
+            <li>A dashboard an organizer can read in five seconds.</li>
+            <li>A responsive interface that works on a phone.</li>
+          </ul>
+        </article>
+
+        <article class="brief-card">
+          <h3>Outcomes</h3>
+          <ul class="check-list">
+            <li>Events are discoverable by category, status and keyword.</li>
+            <li>Capacity limits hold under repeated registration attempts.</li>
+            <li>Cancellations are logged with a status, not erased.</li>
+            <li>Validated input and escaped output throughout.</li>
+            <li>Works offline after first load — no backend required.</li>
+          </ul>
+        </article>
+
+        <article class="brief-card">
+          <h3>Technologies</h3>
+          <ul class="tech-list">
+            <li><span>HTML5</span> Semantic structure, accessible forms</li>
+            <li><span>CSS3</span> Grid, custom properties, media queries</li>
+            <li><span>JavaScript</span> DOM, validation, state, localStorage</li>
+            <li><span>Git &amp; GitHub</span> Version control and source hosting</li>
+            <li><span>GitHub Pages</span> Public deployment</li>
+          </ul>
+        </article>
+      </div>
+
+      <h3 class="team-heading" id="team-heading">Team Obsidian — contributions</h3>
+      <div class="team-grid">
+        <article class="member">
+          <h4>Akshay R Pillai <span>12606521</span></h4>
+          <ul>
+            <li>Event model, CRUD and form validation in <code>script.js</code></li>
+            <li>Capacity and seat-count logic</li>
+            <li>Contribution: event management workflow</li>
+          </ul>
+        </article>
+        <article class="member">
+          <h4>Arshad Hasanulbanna <span>12610513</span></h4>
+          <ul>
+            <li>Layout, responsive CSS and visual design in <code>style.css</code></li>
+            <li>Registration flow and dashboard rendering</li>
+            <li>Contribution: interface and registration</li>
+          </ul>
+        </article>
+        <article class="member">
+          <h4>Rishabh Kumar <span>12612282</span></h4>
+          <ul>
+            <li>Search, category and status filters</li>
+            <li>Accessibility, testing and documentation</li>
+            <li>Contribution: discovery and quality</li>
+          </ul>
+        </article>
+      </div>
+
+      <p class="brief-links">
+        <a href="https://github.com/arshadhassan5615-sketch/Campus-Event-Discovery-Registration-Hub" target="_blank" rel="noopener">GitHub repository</a>
+        <a href="https://arshadhassan5615-sketch.github.io/Campus-Event-Discovery-Registration-Hub/" target="_blank" rel="noopener">Live demo</a>
+      </p>
+    </section>
   </main>
 
   <footer class="site-footer">
     <div>
-      <a class="brand footer-brand" href="#top"><span class="brand-mark">C</span><span>Campus<span class="brand-light">Hub</span></span></a>
-      <p>Campus event discovery and registration</p>
+      <a class="brand footer-brand" href="#page-top"><span class="brand-mark">C</span><span>Campus<span class="brand-light">Hub</span></span></a>
+      <p>Campus event discovery and registration · CSE 326 CA1</p>
     </div>
     <div class="footer-right">
-      <span>CSE 326 · Team Obsidian</span>
+      <span>Team Obsidian · HTML, CSS &amp; JavaScript</span>
       <button type="button" class="footer-link" id="open-about">About this project</button>
     </div>
   </footer>
@@ -176,7 +294,13 @@
         </div>
         <button class="icon-btn" type="button" id="close-about" aria-label="Close">×</button>
       </div>
-      <p>A responsive campus event discovery and registration hub for workshops, competitions, talks and club events.</p>
+      <p>A responsive campus event discovery and registration hub for workshops, competitions, talks and club events. Built as the CA1 problem-statement project for CSE 326.</p>
+      <h3>Problem in one line</h3>
+      <p>Campus events are scattered across WhatsApp groups, notice boards and club pages, so students miss them and organizers cannot track seats.</p>
+      <h3>What the app does</h3>
+      <p>Lists every event in one place, shows live seat availability, prevents overbooking and duplicate registrations, and records cancellations instead of deleting them.</p>
+      <h3>Technologies used</h3>
+      <p>HTML5 for structure, CSS3 Grid and media queries for the responsive layout, and vanilla JavaScript for state, validation and localStorage persistence. Hosted on GitHub Pages.</p>
       <h3>Team Obsidian</h3>
       <ul class="team-list">
         <li>Akshay R Pillai <span>12606521</span></li>
@@ -184,9 +308,14 @@
         <li>Rishabh Kumar <span>12612282</span></li>
       </ul>
       <p class="modal-note">Built with HTML, CSS and JavaScript. Event data is saved in this browser; it is not shared between devices.</p>
+      <p class="modal-links">
+        <a href="https://github.com/arshadhassan5615-sketch/Campus-Event-Discovery-Registration-Hub" target="_blank" rel="noopener">Repository</a>
+        <a href="https://arshadhassan5615-sketch.github.io/Campus-Event-Discovery-Registration-Hub/" target="_blank" rel="noopener">Live demo</a>
+      </p>
     </section>
   </div>
 
   <script src="script.js"></script>
+  
 </body>
 </html>

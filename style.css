@@ -118,6 +118,12 @@ h3 {
   text-decoration: none;
 }
 
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .nav-link:hover {
   color: var(--white);
 }
@@ -127,6 +133,22 @@ h3 {
   max-width: 1160px;
   margin: 0 auto;
   padding: 80px 24px 88px;
+}
+
+.hero-eyebrow {
+  margin: 0 0 12px;
+  color: var(--mint);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
 }
 
 .hero h1 {
@@ -159,6 +181,16 @@ h3 {
   background: #b4efd9;
 }
 
+.hero-button-ghost {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: transparent;
+  color: var(--white);
+}
+
+.hero-button-ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
 /* ---------- Main content area ---------- */
 .page-shell {
   max-width: 1160px;
@@ -189,6 +221,7 @@ h3 {
 /* ---------- Dashboard numbers ---------- */
 .dashboard {
   margin-bottom: 32px;
+  scroll-margin-top: 24px;
 }
 
 .stats {
@@ -218,6 +251,231 @@ h3 {
   font-size: 28px;
   font-weight: 600;
   font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Capacity bar under the dashboard ---------- */
+.capacity-bar {
+  height: 6px;
+  margin-top: 12px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: #e6eae7;
+}
+
+.capacity-bar span {
+  display: block;
+  height: 100%;
+  width: 0;
+  border-radius: 99px;
+  background: var(--green);
+  transition: width 0.4s ease;
+}
+
+#stat-caption {
+  margin: 6px 0 0;
+}
+
+/* ---------- How it works: three steps ---------- */
+.how {
+  margin-bottom: 32px;
+  scroll-margin-top: 24px;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+
+.step {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--white);
+}
+
+.step-num {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: var(--green);
+  font-family: var(--heading-font);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.step h3 {
+  margin: 0 0 6px;
+  font-size: 15px;
+}
+
+.step p {
+  margin: 0;
+  color: var(--text-light);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.how-note {
+  margin: 12px 0 0;
+}
+
+/* ---------- Problem statement, team and technologies ---------- */
+.brief {
+  margin-top: 8px;
+  scroll-margin-top: 24px;
+}
+
+.brief-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.brief-card {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--white);
+}
+
+.brief-card h3 {
+  margin: 0 0 8px;
+  font-size: 15px;
+}
+
+.brief-card p {
+  margin: 0;
+  color: var(--text-light);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.check-list,
+.tech-list {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--text-light);
+  font-size: 13px;
+}
+
+.check-list li {
+  position: relative;
+  padding-left: 18px;
+}
+
+.check-list li::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--mint);
+}
+
+.tech-list li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.tech-list span {
+  min-width: 112px;
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.team-heading {
+  margin: 24px 0 12px;
+  font-size: 17px;
+  scroll-margin-top: 24px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.member {
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--white);
+}
+
+.member h4 {
+  margin: 0 0 8px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.member h4 span {
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+}
+
+.member ul {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--text-light);
+  font-size: 13px;
+}
+
+.member code {
+  padding: 1px 4px;
+  border-radius: 4px;
+  background: #f0f2ef;
+  font-size: 12px;
+}
+
+.brief-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0 0;
+}
+
+.brief-links a,
+.modal-links a {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--green);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.brief-links a:hover,
+.modal-links a:hover {
+  border-color: #c6ddd0;
+  background: #f5f7f5;
+}
+
+.modal-links {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0 0;
 }
 
 /* ---------- Two columns: form and event list ---------- */
@@ -735,12 +993,36 @@ textarea {
   .form-panel {
     position: static;
   }
+
+  .steps,
+  .team-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .steps .step:last-child,
+  .team-grid .member:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .nav-links {
+    gap: 14px;
+  }
 }
 
 /* ---------- Mobile ---------- */
 @media (max-width: 620px) {
   .nav {
     padding: 16px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .nav-links {
+    width: 100%;
+    overflow-x: auto;
+    gap: 16px;
+    padding-bottom: 2px;
+    white-space: nowrap;
   }
 
   .hero {
@@ -769,6 +1051,22 @@ textarea {
   }
 
   .panel {
+    padding: 16px;
+  }
+
+  .brief-grid,
+  .steps,
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .steps .step:last-child,
+  .team-grid .member:last-child {
+    grid-column: auto;
+  }
+
+  .step,
+  .brief-card {
     padding: 16px;
   }
 
