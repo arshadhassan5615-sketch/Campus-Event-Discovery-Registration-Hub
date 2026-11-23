@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#12243a">
+  <meta name="description" content="Thank you for registering for a campus event.">
+  <title>Thank you | CampusHub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="auth.css">
+</head>
+<body class="auth-page">
+
+  <main class="auth-card">
+    <p class="thanks-icon" aria-hidden="true">✓</p>
+    <h1>Thank you for submitting!</h1>
+    <p class="panel-intro" id="thanks-message">Your registration has been received.</p>
+
+    <dl class="thanks-details" id="thanks-details" hidden>
+      <div><dt>Name</dt><dd id="thanks-name"></dd></div>
+      <div><dt>Student ID</dt><dd id="thanks-student-id"></dd></div>
+      <div><dt>Event</dt><dd id="thanks-event"></dd></div>
+      <div><dt>When</dt><dd id="thanks-when"></dd></div>
+      <div><dt>Venue</dt><dd id="thanks-venue"></dd></div>
+    </dl>
+
+    <div class="thanks-actions">
+      <a class="btn primary" href="index.html">Back to events</a>
+      <button class="btn secondary" type="button" id="thanks-logout">Log out</button>
+    </div>
+  </main>
+
+  <script src="thanks.js"></script>
+</body>
+</html>

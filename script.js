@@ -461,7 +461,15 @@ function registerStudent(eventId, registerForm) {
   );
 
   if (updateEvents(nextEvents)) {
-    notify(input.name + ' is registered. Status: Confirmed.');
+    // Save the details for the thank-you page, then open it
+    sessionStorage.setItem('campusHubLastRegistration', JSON.stringify({
+      name: input.name,
+      studentId: input.studentId,
+      eventTitle: event.title,
+      eventDate: formatDate(event),
+      venue: event.venue
+    }));
+    window.location.href = 'thanks.html';
   }
 }
 
@@ -522,6 +530,16 @@ modal.querySelector('.modal-backdrop').addEventListener('click', closeAbout);
 
 document.addEventListener('keydown', event => {
   if (event.key === 'Escape' && !modal.hidden) closeAbout();
+});
+
+// ---------- Login session ----------
+// index.html already sends visitors without a login to login.html
+byId('nav-user-name').textContent = 'Signed in as ' + sessionStorage.getItem('campusHubUser');
+
+byId('logout-button').addEventListener('click', function () {
+  sessionStorage.removeItem('campusHubUser');
+  sessionStorage.removeItem('campusHubLastRegistration');
+  window.location.href = 'login.html';
 });
 
 // ---------- Start ----------

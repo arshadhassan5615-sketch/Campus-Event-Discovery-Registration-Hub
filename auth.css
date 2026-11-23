@@ -1,0 +1,113 @@
+/* Styles for the login and thank-you pages.
+   They reuse the colours and fonts from style.css. */
+
+[hidden] {
+  display: none !important;
+}
+
+body.auth-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: var(--navy);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 380px;
+  padding: 32px 28px;
+  border-radius: 16px;
+  background: var(--white);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+.auth-card .brand {
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.auth-card .brand-light {
+  color: var(--green);
+}
+
+.auth-card h1 {
+  margin: 0 0 4px;
+  color: var(--navy);
+  font-size: 26px;
+}
+
+.auth-card .panel-intro {
+  margin: 0 0 20px;
+}
+
+/* Login form: fields stacked with even spacing */
+.auth-card form {
+  display: grid;
+  gap: 14px;
+}
+
+.auth-submit {
+  width: 100%;
+  padding: 10px 16px;
+}
+
+.auth-card .note {
+  margin: 16px 0 0;
+  text-align: center;
+}
+
+/* Thank-you page */
+.thanks-icon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  margin: 0 0 16px;
+  border-radius: 50%;
+  background: #e6f5ec;
+  color: var(--green);
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.thanks-details {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 20px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #f5f7f5;
+}
+
+.thanks-details div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 14px;
+}
+
+.thanks-details dt {
+  color: var(--text-light);
+}
+
+.thanks-details dd {
+  margin: 0;
+  color: var(--navy);
+  font-weight: 500;
+  text-align: right;
+}
+
+.thanks-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.thanks-actions .btn {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  flex: 1;
+}

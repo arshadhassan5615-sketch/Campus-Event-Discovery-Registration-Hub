@@ -128,6 +128,29 @@ h3 {
   color: var(--white);
 }
 
+/* Signed-in name and log out button in the header */
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #c4ced8;
+  font-size: 13px;
+}
+
+.nav-logout {
+  padding: 6px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--white);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.nav-logout:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
 /* ---------- Hero ---------- */
 .hero {
   max-width: 1160px;

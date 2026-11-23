@@ -10,6 +10,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>
+    // Only logged-in users can see the main page. Otherwise go to the login page.
+    if (!sessionStorage.getItem('campusHubUser')) {
+      window.location.replace('login.html');
+    }
+  </script>
 </head>
 <body>
 
@@ -22,6 +28,10 @@
         <a class="nav-link" href="#dashboard">Dashboard</a>
         <a class="nav-link" href="#how-it-works">How it works</a>
         <a class="nav-link" href="#problem">Problem &amp; team</a>
+      </div>
+      <div class="nav-user">
+        <span id="nav-user-name"></span>
+        <button class="nav-logout" id="logout-button" type="button">Log out</button>
       </div>
     </nav>
 
