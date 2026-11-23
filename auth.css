@@ -105,6 +105,31 @@ body.auth-page {
   gap: 8px;
 }
 
+/* Create account button and the switch back to log in */
+.auth-switch {
+  display: grid;
+  gap: 8px;
+  margin-top: 16px;
+  text-align: center;
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.auth-switch p {
+  margin: 0;
+}
+
+.auth-link {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--green);
+  font: inherit;
+  font-weight: 500;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .thanks-actions .btn {
   display: inline-block;
   text-decoration: none;
